@@ -1,6 +1,4 @@
 # Ejercicios de tuplas: búsqueda del tesoro pirata
-
-
 def get_coordinate(registro):
     """
     Retorna la coordenada del mapa desde una tupla (tesoro, coordenada).
@@ -24,7 +22,7 @@ def convert_coordinate(coordenada):
         Una tupla con los componentes individuales (ej: ("2", "A"))
     """
 
-    return (coordenada[0], coordenada[1])
+    return(coordenada[0], coordenada[1])
 
 def create_record(registro_azara, registro_rui):
     """
@@ -50,8 +48,13 @@ def create_record(registro_azara, registro_rui):
     coord_rui = registro_rui[1]
 
     if convert_coordinate(coord_azara) == coord_rui:
-        return (registro_azara[0], coord_azara,
-                registro_rui[0], coord_rui, registro_rui[2])
+        return (
+                registro_azara[0],
+                coord_azara,
+                registro_rui[0],
+                coord_rui,
+                registro_rui[2]
+        )
     else:
         return "not a match"
 
@@ -74,13 +77,10 @@ def sum_tuple(numeros):
         sum_tuple((1, 2, 3, 4, 5)) -> 15
         sum_tuple(()) -> 0
     """
-
-    def sum_tuple(numeros):
-        total = 0
-        for n in numeros:
-            total += n
-        return total
-
+    total = 0
+    for n in numeros:
+        total += n
+    return total
 
 def count_occurrences(tupla, elemento):
     """
@@ -100,13 +100,11 @@ def count_occurrences(tupla, elemento):
         count_occurrences((1, 2, 2, 3, 2), 2) -> 3
         count_occurrences(('a', 'b', 'a'), 'c') -> 0
     """
-
-    def count_occurrences(tupla, elemento):
-        contador = 0
-        for x in tupla:
-            if x == elemento:
-                contador += 1
-        return contador
+    contador = 0
+    for x in tupla:
+        if x == elemento:
+            contador += 1
+    return contador
 
 
 def find_index(tupla, elemento):
@@ -128,13 +126,10 @@ def find_index(tupla, elemento):
         find_index(('a', 'b', 'c', 'b'), 'b') -> 1
         find_index((1, 2, 3), 9) -> -1
     """
-
-    def find_index(tupla, elemento):
-        for i in range(len(tupla)):
-            if tupla[i] == elemento:
-                return i
-        return -1
-
+    for i in range(len(tupla)):
+        if tupla[i] == elemento:
+            return i
+    return -1
 
 def filter_positives(numeros):
     """
@@ -151,10 +146,8 @@ def filter_positives(numeros):
         filter_positives((-3, 1, 0, 5, -2, 7)) -> (1, 5, 7)
         filter_positives((-1, -2, -3)) -> ()
     """
-
-    def filter_positives(numeros):
-        resultado = ()
-        for n in numeros:
-            if n > 0:
-                resultado += (n,)
-        return resultado
+    resultado = ()
+    for n in numeros:
+        if n > 0:
+            resultado += (n,)
+    return resultado
